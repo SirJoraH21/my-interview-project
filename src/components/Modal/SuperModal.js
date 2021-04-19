@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
     minWidth: 350,
+    maxWidth: 800,
     minHeight: 300,
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
@@ -111,6 +112,7 @@ function SuperModal(props) {
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+        style={{overflow: `auto`}}
       >
         {bodys[props.modalType]}
       </Modal>

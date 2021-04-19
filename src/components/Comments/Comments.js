@@ -18,6 +18,10 @@ const Comments = (props) => {
       date: new Date().toLocaleString(),
     });
   };
+  const clearForm = () => {
+    document.querySelector("form").reset();
+    setCommentText(commentText = "");
+  };
   const styles = {
     span: {
       width: "60px",
@@ -50,7 +54,7 @@ const Comments = (props) => {
       <Button
         variant="outlined"
         color="primary"
-        onClick={createComment}
+        onClick={commentText ? () => {createComment(); clearForm()} : null}
         style={styles.btn}
       >
         Comit
